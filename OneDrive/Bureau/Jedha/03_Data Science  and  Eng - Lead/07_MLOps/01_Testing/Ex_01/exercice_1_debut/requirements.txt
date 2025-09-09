@@ -1,0 +1,5 @@
+pandas
+scikit-learn
+joblib
+pytest
+great_expectations==0.18.19
