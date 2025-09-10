@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout code') {
+            steps {
+                git url: 'https://github.com/Dreipfelt/Electricity-predict-Jenkins.git', branch: 'main'
+            }
+        }
+        stage('Test train.py') {
+            steps {
+                sh 'python train.py --test'  // ou exécution de ton test unitaire
+            }
+        }
+    }
+}
+#L’idée est de vérifier que train.py se lance correctement.git add "Pipeline_1" "Test_Train" "Pipeline_Supplementaire_3"

@@ -1,0 +1,17 @@
+#Exemple de script minimal (si tes DAGs sont en Python)
+pipeline {
+    agent any
+    stages {
+        stage('Checkout code') {
+            steps {
+                git url: 'https://github.com/Dreipfelt/Electricity-predict-Jenkins.git', branch: 'main'
+            }
+        }
+        stage('Test DAGs') {
+            steps {
+                sh 'python -m unittest discover tests/dags'
+            }
+        }
+    }
+}
+#Remplace tests/dags par le dossier où sont tes tests de DAG.
