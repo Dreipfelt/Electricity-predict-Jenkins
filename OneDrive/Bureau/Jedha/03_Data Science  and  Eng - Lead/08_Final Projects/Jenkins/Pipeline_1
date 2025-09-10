@@ -1,3 +1,4 @@
+#Exemple de script minimal (si tes DAGs sont en Python)
 pipeline {
     agent any
     stages {
@@ -6,11 +7,11 @@ pipeline {
                 git url: 'https://github.com/Dreipfelt/Electricity-predict-Jenkins.git', branch: 'main'
             }
         }
-        stage('Test train.py') {
+        stage('Test DAGs') {
             steps {
-                sh 'python train.py --test'  // ou exécution de ton test unitaire
+                sh 'python -m unittest discover tests/dags'
             }
         }
     }
 }
-#L’idée est de vérifier que train.py se lance correctement.git add "Pipeline_1" "Test_Train" "Pipeline_Supplementaire_3"
+#Remplace tests/dags par le dossier où sont tes tests de DAG.

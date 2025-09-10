@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        TEST_IMAGE = 'paycare-tests'
-        ETL_IMAGE = 'paycare-etl'
+        TEST_IMAGE = 'electricity-predict-tests'
+        ETL_IMAGE = 'electricity-predict-etl'
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
         AWS_DEFAULT_REGION = 'eu-north-1' 
